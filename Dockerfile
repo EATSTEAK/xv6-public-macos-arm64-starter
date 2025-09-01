@@ -34,6 +34,9 @@ RUN dpkg --add-architecture i386 && \
 # 작업 디렉토리 설정
 WORKDIR /workspace
 
+# GDB 자동 로드 경로 설정
+RUN mkdir -p /root/.config/gdb && touch /root/.config/gdb/gdbinit && echo "set auto-load safe-path /workspace" >> /root/.config/gdb/gdbinit
+
 # 권한 설정
 RUN chmod -R 755 /workspace
 
