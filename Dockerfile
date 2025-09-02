@@ -21,6 +21,8 @@ RUN apt-get update && apt-get install -y \
     gcc-multilib \
     g++-multilib \
     libc6-dev-i386 \
+    tmux \
+    screen \
     && rm -rf /var/lib/apt/lists/*
 
 # 32비트 라이브러리 설치 (i386 아키텍처 지원)
