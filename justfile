@@ -5,6 +5,9 @@ IMAGE_NAME := "xv6-amd64"
 CONTAINER_NAME := "xv6-container"
 XV6_PATH := "xv6-public"
 
+# 기본 명령 (help 표시)
+default: help
+
 # Docker 이미지 빌드
 build-image:
     docker build --platform=linux/amd64 -t {{IMAGE_NAME}} .
@@ -62,6 +65,3 @@ help:
     @echo "빠른 시작:"
     @echo "  1. just build-image"
     @echo "  2. just build-and-run"
-
-# 기본 명령 (help 표시)
-default: help
